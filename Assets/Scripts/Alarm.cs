@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(Animator))]
+
 public class Alarm : MonoBehaviour
 {
     private AudioSource _audio;
@@ -17,7 +21,7 @@ public class Alarm : MonoBehaviour
     private void Update()
     {
         if(_audio.enabled)
-            SliderEffect();
+            ChangeAlarmVolume();
     }
 
     public void TurnAlarm()
@@ -28,7 +32,7 @@ public class Alarm : MonoBehaviour
         
     }
 
-    public void SliderEffect()
+    public void ChangeAlarmVolume()
     {
         if(_increaseVolume)
         {
